@@ -1,0 +1,37 @@
+{
+  "name": "create-fastify",
+  "version": "1.0.0",
+  "description": "Rapidly generate a Fastify project",
+  "main": "cmd.js",
+  "bin": {
+    "create-fastify": "cmd.js"
+  },
+  "scripts": {
+    "test": "node test",
+    "lint": "standard",
+    "ci": "npm run lint && npm test"
+  },
+  "keywords": [
+    "fastify",
+    "create",
+    "generate",
+    "boilererplate"
+  ],
+  "author": "David Mark Clements (@davidmarkclem)",
+  "license": "MIT",
+  "dependencies": {
+    "fastify-cli": "^1.4.0"
+  },
+  "devDependencies": {
+    "standard": "^14.3.1",
+    "tap": "^14.10.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmarkclements/fastify-create.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidmarkclements/fastify-create/issues"
+  },
+  "homepage": "https://github.com/davidmarkclements/fastify-create#readme"
+}
