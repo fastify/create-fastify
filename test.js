@@ -14,7 +14,7 @@ test('generates a fastify project in the current folder', async ({ same, is }) =
     'app.js',
     'package.json',
     'plugins',
-    'services',
+    'routes',
     'test'
   ])
   const { name } = require(join(dir, 'package.json'))
