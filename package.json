@@ -1,6 +1,6 @@
 {
   "name": "create-fastify",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Rapidly generate a Fastify project",
   "main": "cmd.js",
   "bin": {
