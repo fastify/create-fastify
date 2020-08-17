@@ -13,6 +13,26 @@ npm init fastify
 
 The `npm init` command will find this package automatically and run it.
 
+### Integrate
+
+To integrate Fastify into an existing project:
+
+```sh
+npm init fastify --integrate
+```
+
+Note that this will overwrite files, so exercise caution.
+
+Files and folders that will be overwritten by integrate mode:
+
+* .gitignore
+* app.js
+* plugins
+* routes
+* test
+
+The `package.json` file will not be overwritten but will be modified.
+
 ## Contributing
 If you feel you can help in any way, be it with examples, extra testing, or new features please open a pull request or open an issue.
 
