@@ -18,7 +18,7 @@ The `npm init` command will find this package automatically and run it.
 To integrate Fastify into an existing project:
 
 ```sh
-npm init fastify --integrate
+npm init fastify -- --integrate
 ```
 
 Note that this will overwrite files, so exercise caution.
