@@ -18,5 +18,5 @@ test('generates a fastify project in the current folder', async ({ same, is }) =
     'test'
   ])
   const { name } = require(join(dir, 'package.json'))
-  is(name, basename(dir).toLowerCase())
+  is(name.toLowerCase(), basename(dir).toLowerCase())
 })
