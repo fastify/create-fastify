@@ -12,6 +12,7 @@ test('generates a fastify project in the current folder', async ({ same, is }) =
   same(readdirSync(dir), [
     '.gitignore',
     'app.js',
+    'README.md',
     'package.json',
     'plugins',
     'routes',
