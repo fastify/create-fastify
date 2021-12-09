@@ -11,8 +11,8 @@ test('generates a fastify project in the current folder', async ({ same, is }) =
   spawnSync('node', [join(__dirname, 'cmd.js')], { cwd: dir })
   same(readdirSync(dir), [
     '.gitignore',
-    'app.js',
     'README.md',
+    'app.js',
     'package.json',
     'plugins',
     'routes',
