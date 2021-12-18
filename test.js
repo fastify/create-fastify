@@ -9,8 +9,9 @@ const { spawnSync } = require('child_process')
 test('generates a fastify project in the current folder', async ({ same, is }) => {
   const dir = mkdtempSync(join(tmpdir(), 'create-fastify-test'))
   spawnSync('node', [join(__dirname, 'cmd.js')], { cwd: dir })
-  same(readdirSync(dir), [
+  same(readdirSync(dir).sort(), [
     '.gitignore',
+    'README.md',
     'app.js',
     'package.json',
     'plugins',
