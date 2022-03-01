@@ -6,11 +6,12 @@ const { mkdtempSync, readdirSync } = require('fs')
 const { tmpdir } = require('os')
 const { spawnSync } = require('child_process')
 
-test('generates a fastify project in the current folder', async ({ same, is }) => {
+test('generates a fastify project in the current folder', async ({ equal, match }) => {
   const dir = mkdtempSync(join(tmpdir(), 'create-fastify-test'))
   spawnSync('node', [join(__dirname, 'cmd.js')], { cwd: dir })
-  same(readdirSync(dir).sort(), [
+  match(readdirSync(dir).sort(), [
     '.gitignore',
+    '.vscode',
     'README.md',
     'app.js',
     'package.json',
@@ -19,5 +20,5 @@ test('generates a fastify project in the current folder', async ({ same, is }) =
     'test'
   ])
   const { name } = require(join(dir, 'package.json'))
-  is(name.toLowerCase(), basename(dir).toLowerCase())
+  equal(name.toLowerCase(), basename(dir).toLowerCase())
 })
