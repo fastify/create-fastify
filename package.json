@@ -20,11 +20,11 @@
   "author": "David Mark Clements (@davidmarkclem)",
   "license": "MIT",
   "dependencies": {
-    "fastify-cli": "^2.2.0"
+    "fastify-cli": "^2.15.0"
   },
   "devDependencies": {
-    "standard": "^16.0.3",
-    "tap": "^15.0.9"
+    "standard": "^16.0.4",
+    "tap": "^15.1.6"
   },
   "repository": {
     "type": "git",
