@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "standard": "^16.0.4",
-    "tap": "^15.1.6"
+    "tap": "^16.0.0"
   },
   "repository": {
     "type": "git",
