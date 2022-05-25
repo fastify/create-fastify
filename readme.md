@@ -1,7 +1,6 @@
 # create-fastify
 
 ![CI](https://github.com/fastify/create-fastify/workflows/CI/badge.svg)
-[![Known Vulnerabilities](https://snyk.io/test/github/fastify/create-fastify/badge.svg)](https://snyk.io/test/github/fastify/create-fastify)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://standardjs.com/)
 
 > Rapidly generate a Fastify project
