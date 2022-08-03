@@ -7,9 +7,8 @@
     "create-fastify": "cmd.js"
   },
   "scripts": {
-    "test": "node test",
-    "lint": "standard",
-    "ci": "npm run lint && npm test"
+    "test": "tap",
+    "lint": "standard"
   },
   "keywords": [
     "fastify",
