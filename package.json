@@ -27,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidmarkclements/fastify-create.git"
+    "url": "git+https://github.com/fastify/create-fastify.git"
   },
   "bugs": {
-    "url": "https://github.com/davidmarkclements/fastify-create/issues"
+    "url": "https://github.com/fastify/create-fastify/issues"
   },
-  "homepage": "https://github.com/davidmarkclements/fastify-create#readme"
+  "homepage": "https://github.com/fastify/create-fastify#readme"
 }
