@@ -36,6 +36,8 @@ Files and folders that will be overwritten by integrate mode:
 
 The `package.json` file will not be overwritten but will be modified.
 
+The plugins are loaded with [@fastify/autoload](https://github.com/fastify/fastify-autoload) with an empty default configuration.
+
 ## Contributing
 If you feel you can help in any way, be it with examples, extra testing, or new features please open a pull request or open an issue.
 
