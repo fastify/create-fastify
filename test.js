@@ -1,10 +1,10 @@
 'use strict'
 
 const { test } = require('tap')
-const { join, basename } = require('path')
-const { mkdtempSync, readdirSync } = require('fs')
-const { tmpdir } = require('os')
-const { spawnSync } = require('child_process')
+const { join, basename } = require('node:path')
+const { mkdtempSync, readdirSync } = require('node:fs')
+const { tmpdir } = require('node:os')
+const { spawnSync } = require('node:child_process')
 
 test('generates a fastify project in the current folder', async ({ equal, match }) => {
   const dir = mkdtempSync(join(tmpdir(), 'create-fastify-test'))
