@@ -3,6 +3,7 @@
   "version": "4.0.0",
   "description": "Rapidly generate a Fastify project",
   "main": "cmd.js",
+  "type": "commonjs",
   "bin": {
     "create-fastify": "cmd.js"
   },
