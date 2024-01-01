@@ -20,7 +20,7 @@
   "author": "David Mark Clements (@davidmarkclem)",
   "license": "MIT",
   "dependencies": {
-    "fastify-cli": "^5.0.1"
+    "fastify-cli": "^6.0.0"
   },
   "devDependencies": {
     "standard": "^17.0.0",
