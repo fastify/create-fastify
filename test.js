@@ -41,9 +41,14 @@ test('generates a fastify project in the current folder using --integrate', asyn
   const projectName = 'create-fastify-test-integrate'
   const dir = join(testDir, projectName)
   mkdirSync(dir)
+  const { stdout: npmVersion } = spawnSync('npm', ['--version'], { cwd: dir })
   spawnSync('npm', ['init', '-y'], { cwd: dir })
   spawnSync('npm', ['link', 'create-fastify'], { cwd: dir })
-  spawnSync('npm', ['init', 'fastify', '--', '--integrate'], { cwd: dir })
+  if (parseInt(npmVersion.toString().split('.')[0], 10) < 7) {
+    spawnSync('npm', ['init', 'fastify', '--integrate'], { cwd: dir })
+  } else {
+    spawnSync('npm', ['init', 'fastify', '--', '--integrate'], { cwd: dir })
+  }
   t.match(readdirSync(dir).sort(), [
     '.gitignore',
     'README.md',
