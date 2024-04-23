@@ -1,26 +1,30 @@
 'use strict'
 
-const { test, teardown } = require('tap')
+const { test, teardown, before } = require('tap')
 const { join } = require('node:path')
 const { mkdtempSync, readdirSync, mkdirSync, rmSync } = require('node:fs')
 const { tmpdir } = require('node:os')
 const { spawnSync } = require('node:child_process')
 
 const testDir = mkdtempSync(join(tmpdir(), 'create-fastify-test-'))
-spawnSync('npm', ['link'], { cwd: __dirname })
+
+before(() => {
+  spawnSync('npm', ['link'], { cwd: __dirname, shell: true })
+})
 
 teardown(() => {
-  spawnSync('npm', ['unlink'], { cwd: __dirname })
+  spawnSync('npm', ['unlink', '-g'], { cwd: __dirname, shell: true })
   rmSync(testDir, { recursive: true, force: true })
 })
 
-test('generates a fastify project in the current folder', async (t) => {
+test('generates a fastify project in the current folder', (t) => {
   t.plan(3)
   const projectName = 'create-fastify-test-current'
   const dir = join(testDir, projectName)
+  const opts = { cwd: dir, shell: true }
   mkdirSync(dir)
-  spawnSync('npm', ['link', 'create-fastify'], { cwd: dir })
-  spawnSync('npm', ['init', 'fastify'], { cwd: dir })
+  spawnSync('npm', ['link', 'create-fastify'], opts)
+  spawnSync('npm', ['init', 'fastify'], opts)
   t.match(readdirSync(dir).sort(), [
     '.gitignore',
     'README.md',
@@ -36,18 +40,19 @@ test('generates a fastify project in the current folder', async (t) => {
   t.equal(name, projectName)
 })
 
-test('generates a fastify project in the current folder using --integrate', async (t) => {
+test('generates a fastify project in the current folder using --integrate', (t) => {
   t.plan(3)
   const projectName = 'create-fastify-test-integrate'
   const dir = join(testDir, projectName)
+  const opts = { cwd: dir, shell: true }
   mkdirSync(dir)
-  const { stdout: npmVersion } = spawnSync('npm', ['--version'], { cwd: dir })
-  spawnSync('npm', ['init', '-y'], { cwd: dir })
-  spawnSync('npm', ['link', 'create-fastify'], { cwd: dir })
+  const { stdout: npmVersion } = spawnSync('npm', ['--version'], opts)
+  spawnSync('npm', ['init', '-y'], opts)
+  spawnSync('npm', ['link', 'create-fastify'], opts)
   if (parseInt(npmVersion.toString().split('.')[0], 10) < 7) {
-    spawnSync('npm', ['init', 'fastify', '--integrate'], { cwd: dir })
+    spawnSync('npm', ['init', 'fastify', '--integrate'], opts)
   } else {
-    spawnSync('npm', ['init', 'fastify', '--', '--integrate'], { cwd: dir })
+    spawnSync('npm', ['init', 'fastify', '--', '--integrate'], opts)
   }
   t.match(readdirSync(dir).sort(), [
     '.gitignore',
@@ -64,12 +69,13 @@ test('generates a fastify project in the current folder using --integrate', asyn
   t.equal(name, projectName)
 })
 
-test('generates a fastify project in a new folder', async (t) => {
+test('generates a fastify project in a new folder', (t) => {
   t.plan(3)
   const projectName = 'create-fastify-new-dir'
   const dir = join(testDir, projectName)
-  spawnSync('npm', ['link', 'create-fastify'], { cwd: testDir })
-  spawnSync('npm', ['init', 'fastify', projectName], { cwd: testDir })
+  const opts = { cwd: testDir, shell: true }
+  spawnSync('npm', ['link', 'create-fastify'], opts)
+  spawnSync('npm', ['init', 'fastify', projectName], opts)
   t.match(readdirSync(dir).sort(), [
     '.gitignore',
     'README.md',
