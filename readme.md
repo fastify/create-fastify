@@ -11,7 +11,7 @@
 There is no need to install this package directly.
 
 ```sh
-npm init fastify
+npm init fastify [your_app_name]
 ```
 
 The `npm init` command will find this package automatically and run it.
