@@ -1,6 +1,6 @@
 {
   "name": "create-fastify",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Rapidly generate a Fastify project",
   "main": "cmd.js",
   "type": "commonjs",
@@ -20,7 +20,7 @@
   "author": "David Mark Clements (@davidmarkclem)",
   "license": "MIT",
   "dependencies": {
-    "fastify-cli": "^6.0.0"
+    "fastify-cli": "^7.0.0"
   },
   "devDependencies": {
     "standard": "^17.0.0",
