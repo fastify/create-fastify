@@ -2,7 +2,7 @@
 
 'use strict';
 
-const path = require('path');
+const { resolve } = require('node:path');
 
 const args = process.argv.slice(2);
 
