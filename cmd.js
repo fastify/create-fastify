@@ -2,10 +2,10 @@
 
 'use strict'
 
+const { resolve } = require('node:path')
+
 const args = [...process.argv.slice(2)]
 
-if (!args[0] || args[0].startsWith('-')) {
-  args.unshift('.')
-}
+const directory = (!args[0] || args[0] === '' || args[0].startsWith('-')) ? '.' : resolve(args[0])
 
-require('fastify-cli/generate').cli(args)
+require('fastify-cli/generate').cli([directory])
