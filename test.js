@@ -1,6 +1,6 @@
 'use strict'
 
-const { test, teardown, before } = require('tap')
+const { test, after, before } = require('node:test')
 const { join } = require('node:path')
 const { mkdtempSync, readdirSync, mkdirSync, rmSync } = require('node:fs')
 const { tmpdir } = require('node:os')
@@ -12,7 +12,7 @@ before(() => {
   spawnSync('npm', ['link'], { cwd: __dirname, shell: true })
 })
 
-teardown(() => {
+after(() => {
   spawnSync('npm', ['unlink', '-g'], { cwd: __dirname, shell: true })
   rmSync(testDir, { recursive: true, force: true })
 })
@@ -25,7 +25,7 @@ test('generates a fastify project in the current folder', (t) => {
   mkdirSync(dir)
   spawnSync('npm', ['link', 'create-fastify'], opts)
   spawnSync('npm', ['init', 'fastify'], opts)
-  t.match(readdirSync(dir).sort(), [
+  t.assert.deepStrictEqual(readdirSync(dir).sort(), [
     '.gitignore',
     'README.md',
     'app.js',
@@ -36,8 +36,8 @@ test('generates a fastify project in the current folder', (t) => {
     'test'
   ])
   const { name, dependencies } = require(join(dir, 'package.json'))
-  t.ok(Object.keys(dependencies).includes('fastify'))
-  t.equal(name, projectName)
+  t.assert.ok(Object.keys(dependencies).includes('fastify'))
+  t.assert.strictEqual(name, projectName)
 })
 
 test('generates a fastify project in the current folder using --integrate', (t) => {
@@ -54,7 +54,7 @@ test('generates a fastify project in the current folder using --integrate', (t) 
   } else {
     spawnSync('npm', ['init', 'fastify', '--', '--integrate'], opts)
   }
-  t.match(readdirSync(dir).sort(), [
+  t.assert.deepStrictEqual(readdirSync(dir).sort(), [
     '.gitignore',
     'README.md',
     'app.js',
@@ -65,8 +65,8 @@ test('generates a fastify project in the current folder using --integrate', (t) 
     'test'
   ])
   const { name, dependencies } = require(join(dir, 'package.json'))
-  t.ok(Object.keys(dependencies).includes('fastify'))
-  t.equal(name, projectName)
+  t.assert.ok(Object.keys(dependencies).includes('fastify'))
+  t.assert.strictEqual(name, projectName)
 })
 
 test('generates a fastify project in a new folder', (t) => {
@@ -76,7 +76,7 @@ test('generates a fastify project in a new folder', (t) => {
   const opts = { cwd: testDir, shell: true }
   spawnSync('npm', ['link', 'create-fastify'], opts)
   spawnSync('npm', ['init', 'fastify', projectName], opts)
-  t.match(readdirSync(dir).sort(), [
+  t.assert.deepStrictEqual(readdirSync(dir).sort(), [
     '.gitignore',
     'README.md',
     'app.js',
@@ -86,6 +86,6 @@ test('generates a fastify project in a new folder', (t) => {
     'test'
   ])
   const { name, dependencies } = require(join(dir, 'package.json'))
-  t.ok(Object.keys(dependencies).includes('fastify'))
-  t.equal(name, projectName)
+  t.assert.ok(Object.keys(dependencies).includes('fastify'))
+  t.assert.strictEqual(name, projectName)
 })
