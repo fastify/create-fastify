@@ -8,8 +8,9 @@
     "create-fastify": "cmd.js"
   },
   "scripts": {
-    "test": "tap",
-    "lint": "standard"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "tap"
   },
   "keywords": [
     "fastify",
@@ -23,7 +24,7 @@
     "fastify-cli": "^7.0.0"
   },
   "devDependencies": {
-    "standard": "^17.0.0",
+    "neostandard": "^0.11.9",
     "tap": "^16.0.0"
   },
   "repository": {
