@@ -8,8 +8,9 @@
     "create-fastify": "cmd.js"
   },
   "scripts": {
-    "test": "c8 --100 node --test",
-    "lint": "standard"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "test": "c8 --100 node --test"
   },
   "keywords": [
     "fastify",
@@ -24,7 +25,7 @@
     "fastify-cli": "^7.0.0"
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "neostandard": "^0.11.9"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 # create-fastify
 
 [![CI](https://github.com/fastify/create-fastify/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/fastify/create-fastify/actions/workflows/ci.yml)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://standardjs.com/)
+[![neostandard javascript style](https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat)](https://github.com/neostandard/neostandard)
 
 > Rapidly generate a Fastify project
 
