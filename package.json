@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "test": "tap"
+    "test": "c8 --100 node --test"
   },
   "keywords": [
     "fastify",
@@ -21,11 +21,11 @@
   "author": "David Mark Clements (@davidmarkclem)",
   "license": "MIT",
   "dependencies": {
+    "c8": "^10.1.2",
     "fastify-cli": "^7.0.0"
   },
   "devDependencies": {
-    "neostandard": "^0.11.9",
-    "tap": "^16.0.0"
+    "neostandard": "^0.11.9"
   },
   "repository": {
     "type": "git",
