@@ -1,6 +1,7 @@
 # create-fastify
 
 [![CI](https://github.com/fastify/create-fastify/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/fastify/create-fastify/actions/workflows/ci.yml)
+[![NPM version](https://img.shields.io/npm/v/create-fastify.svg?style=flat)](https://www.npmjs.com/package/create-fastify)
 [![neostandard javascript style](https://img.shields.io/badge/code_style-neostandard-brightgreen?style=flat)](https://github.com/neostandard/neostandard)
 
 > Rapidly generate a Fastify project
@@ -41,10 +42,7 @@ The plugins are loaded with [@fastify/autoload](https://github.com/fastify/fasti
 ## Contributing
 If you feel you can help in any way, be it with examples, extra testing, or new features please open a pull request or open an issue.
 
-The code follows the Standard code style.
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ## License
-**[MIT](https://github.com/fastify/fastify-cli/blob/master/LICENSE)**
 
-*The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.*
+Licensed under [MIT](./LICENSE).
