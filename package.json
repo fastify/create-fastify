@@ -19,6 +19,25 @@
     "boilererplate"
   ],
   "author": "David Mark Clements (@davidmarkclem)",
+  "contributors": [
+    {
+      "name": "Matteo Collina",
+      "email": "hello@matteocollina.com"
+    },
+    {
+      "name": "Manuel Spigolon",
+      "email": "behemoth89@gmail.com"
+    },
+    {
+      "name": "Aras Abbasi",
+      "email": "aras.abbasi@gmail.com"
+    },
+    {
+      "name": "Frazer Smith",
+      "email": "frazer.dev@icloud.com",
+      "url": "https://github.com/fdawgs"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "c8": "^10.1.2",
@@ -35,5 +54,15 @@
   "bugs": {
     "url": "https://github.com/fastify/create-fastify/issues"
   },
-  "homepage": "https://github.com/fastify/create-fastify#readme"
+  "homepage": "https://github.com/fastify/create-fastify#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/fastify"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/fastify"
+    }
+  ]
 }
