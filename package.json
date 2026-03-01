@@ -40,7 +40,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "c8": "^10.1.2",
+    "c8": "^11.0.0",
     "fastify-cli": "^7.0.0"
   },
   "devDependencies": {
