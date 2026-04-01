@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "eslint": "^9.17.0",
-    "neostandard": "^0.12.0"
+    "neostandard": "^0.13.0"
   },
   "repository": {
     "type": "git",
