@@ -41,7 +41,7 @@
   "license": "MIT",
   "dependencies": {
     "c8": "^11.0.0",
-    "fastify-cli": "^7.0.0"
+    "fastify-cli": "^8.0.0"
   },
   "devDependencies": {
     "eslint": "^9.17.0",
